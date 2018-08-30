@@ -1,0 +1,24 @@
+{
+  "name": "CORE-pokemon-battler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./spec/*.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaphaellaGordon/CORE-pokemon-battler.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RaphaellaGordon/CORE-pokemon-battler/issues"
+  },
+  "homepage": "https://github.com/RaphaellaGordon/CORE-pokemon-battler#readme",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0"
+  }
+}
