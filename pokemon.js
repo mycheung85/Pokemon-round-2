@@ -2,7 +2,7 @@ class Pokemon {
   constructor(name, sound, move) {
     this.name = name;
     this.health = 100;
-    this.attackDamage = 0;
+    this.attackDamage = 50;
     this.sound = sound;
     this.move = move;
   }
@@ -17,7 +17,7 @@ class Pokemon {
 class Fire extends Pokemon {
 constructor(name, sound, move) {
   super(name, sound, move);
-  this.weekness = 'water';
+  this.weakness = 'water';
   this.strength = 'grass'
 } 
 }
@@ -25,14 +25,14 @@ constructor(name, sound, move) {
 class Grass extends Pokemon {
   constructor(name, sound, move) {
   super(name, sound, move);
-  this.weekness = 'fire';
+  this.weakness = 'fire';
   this.strength = 'water'
   } 
 }
 class Water extends Pokemon {
   constructor(name, sound, move) {
   super(name, sound, move);
-  this.weekness = 'grass';
+  this.weakness = 'grass';
   this.strength = 'fire'
   } 
 }
