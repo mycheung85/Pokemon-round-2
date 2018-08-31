@@ -1,17 +1,18 @@
-const Battle = function(trainer1, trainer2, pokemon1, pokemon2) {
+
+class Battle {
+
+constructor (trainer1, trainer2, pokemon1, pokemon2) {
 this.trainer1 = trainer1
 this.trainer2 = trainer2
 }
-
-// So each trainer picks their pokemon
-Battle.prototype.pickPokemon =  function (pick1, pick2) {
-  if(pick1 !== undefined) {
-    this.trainer1 = this.trainer1.storage[pick1]
-  }
-  if (pick2 !== undefined) {
-    this.trainer2 = this.trainer2.storage[pick2]
-  }
-  console.log('i got called')
+  pickPokemon  (pick1, pick2) {
+    if(pick1 !== undefined) {
+      this.trainer1 = this.trainer1.storage[pick1]
+    }
+    if (pick2 !== undefined) {
+      this.trainer2 = this.trainer2.storage[pick2]
+    }
+}
 }
 
 // then they fight
@@ -22,38 +23,38 @@ Battle.prototype.pickPokemon =  function (pick1, pick2) {
 // Then it will be the turn of trainer 2, if their type is stronger then their attack is stronger and their health goes up and trainer 1's health goes down
 // Once each pokemon's health gets below 0 then the game is over
 
-// Battle.prototype.fight = function(pokemon1, pokemon2) {
-//   this.pickPokemon()
+Battle.prototype.fight = function(pokemon1, pokemon2) {
+  this.pickPokemon()
 
 
-// const turn = true
-// if (turn === true) {
-//   turn = this.trainer1
-//   turn = false;
-// } else {
-//   turn = this.trainer2
-//   turn = true
-// }
+const turn = true
+if (turn === true) {
+  turn = this.trainer1
+  // turn = false;
+} else {
+  turn = this.trainer2
+  // turn = true
+}
 
 
-// switch (pokemon1, pokemon2) {
-//   case (pokemon1.type === 'water' && pokemon2.type === 'grass'):
-//     pokemon1.attackDamage = pokemon1.health * 0.75
-//     pokeman2.health -= pokemon1.attackDamage
-//   break;
-//   case (pokemon1.type === 'grass' && pokemon2.type === 'water'):
-//     pokemon1.attackDamage = pokemon1.health * 1.25
-//     pokeman2.health -= pokemon1.attackDamage
-//     break;
-//   case (pokemon1.type === 'fire' && pokemon2.type === 'water'):
-//     pokemon1.attackDamage = pokemon1.health * 1.25
-//     pokeman2.health -= pokemon1.attackDamage
-//     break;
-//   case (pokemon1.type === 'water' && pokemon2.type === 'fire'):
-//     pokemon1.attackDamage = pokemon1.health * 0.75
-//     pokeman2.health -= pokemon1.attackDamage
-//   break;
-//   }
-// }
+switch (pokemon1, pokemon2) {
+  case (pokemon1.type === 'water' && pokemon2.type === 'grass'):
+    pokemon1.attackDamage = pokemon1.health * 0.75
+    pokeman2.health -= pokemon1.attackDamage
+  break;
+  case (pokemon1.type === 'grass' && pokemon2.type === 'water'):
+    pokemon1.attackDamage = pokemon1.health * 1.25
+    pokeman2.health -= pokemon1.attackDamage
+    break;
+  case (pokemon1.type === 'fire' && pokemon2.type === 'water'):
+    pokemon1.attackDamage = pokemon1.health * 1.25
+    pokeman2.health -= pokemon1.attackDamage
+    break;
+  case (pokemon1.type === 'water' && pokemon2.type === 'fire'):
+    pokemon1.attackDamage = pokemon1.health * 0.75
+    pokeman2.health -= pokemon1.attackDamage
+  break;
+  }
+}
 
 module.exports = Battle

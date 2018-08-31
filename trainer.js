@@ -1,13 +1,15 @@
-const Trainer = function(name) {
-this.name = name;
-this.storage = {}
+class Trainer {
+  constructor(name) {
+    this.name = name;
+    this.storage = {}
+  }
+  catch(pokemon) {
+  this.storage[pokemon] = pokemon;
+  };
 }
 
 
 
-Trainer.prototype.catch = function (pokemon) {
-this.storage[pokemon] = pokemon;
-};
 
 module.exports = Trainer;
 

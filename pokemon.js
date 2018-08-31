@@ -1,34 +1,41 @@
-const Pokemon = function(name, sound, move) {
-this.name = name;
-this.health = 100;
-this.attackDamage = 0;
-this.sound = sound;
-this.move = move;
-this.type = type;
-}
-
-Pokemon.prototype.sound = function() {
-  this.sound;
-}
-
-Pokemon.prototype.move = function() {
-  this.move;
-}
-
-Pokemon.prototype.weakness = function() {
-  if(this.type === 'fire') {
-    this.weakness = 'water'
-  } else {
-    if(this.type === 'grass') {
-      this.weakness = 'fire'
-    } else {
-      if(this.type === 'water') {
-        this.weakness = 'grass'
-      }
-    }
+class Pokemon {
+  constructor(name, sound, move) {
+    this.name = name;
+    this.health = 100;
+    this.attackDamage = 0;
+    this.sound = sound;
+    this.move = move;
   }
-
+    sound() {
+    this.sound;
+  }
+    move() {
+    this.move;
+  }
 }
-module.exports = Pokemon
+
+class Fire extends Pokemon {
+constructor(name, sound, move) {
+  super(name, sound, move);
+  this.weekness = 'water';
+  this.strength = 'grass'
+} 
+}
+
+class Grass extends Pokemon {
+  constructor(name, sound, move) {
+  super(name, sound, move);
+  this.weekness = 'fire';
+  this.strength = 'water'
+  } 
+}
+class Water extends Pokemon {
+  constructor(name, sound, move) {
+  super(name, sound, move);
+  this.weekness = 'grass';
+  this.strength = 'fire'
+  } 
+}
+module.exports = {Pokemon, Fire, Grass, Water}
 
 // Pikachu, Charamnder, Squirtle, Chiazard
