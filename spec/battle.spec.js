@@ -17,6 +17,8 @@ describe.only('Battle', () => {
     bharat.catch(pikachu);
     manyee.catch(squirtle);
     const battle = new Battle (bharat, manyee);
+    console.log(battle.fight)
+    battle.fight()
     expect (battle.fight()).to.equal();
   });
 });

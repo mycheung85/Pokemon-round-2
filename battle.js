@@ -16,24 +16,26 @@ this.turn = true;
   }
   attack(attacker, defender) {
     if (attacker.storage[0].strength === defender.storage[0].weakness) {
-    attacker.storage[0].attackDamage = attacker.storage[0].health * 1.25
-    defender.storage[0].health -= defender.storage[0].attackDamage
+    let attackLevel = attacker.storage[0].attackDamage * 1.25
+    defender.storage[0].health -= attackLevel;
     } 
-    if (attacker.storage[0].weakness === defender.storage[0].strength) {
-    attacker.storage[0].attackDamage = attacker.storage[0].health * 0.75
-    defender.storage[0].health -= attacker.storage[0].attackDamage;
+    else if (attacker.storage[0].weakness === defender.storage[0].strength) {
+    let smallerAttackLevel = attacker.storage[0].attackDamage * 0.75
+    defender.storage[0].health -= smallerAttackLevel;
     }
   }
 
   fight() {
   
-  while(this.trainer1.storage[0].health < 1|| this.trainer2.storage[0].health < 1) {
-  
-  if(this.turn === true) {
-    console.log("hello")
+  while(this.trainer1.storage[0].health> 0|| this.trainer2.storage[0].health > 0) {
+    if(this.turn === true) {
     this.attack(this.trainer1, this.trainer2)
+    // console.log(this.trainer2.storage[0].health)
+    this.turn = !this.turn
     } else {
-    this.attack(this.trainer2, this.trainer2)
+    this.attack(this.trainer2, this.trainer1)
+    // console.log(this.trainer1.storage[0].health)
+    this.turn = !this.turn
       }
     }
     //console.log('hello')
